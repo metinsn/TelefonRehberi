@@ -11,11 +11,15 @@ namespace TelefonRehberi
             InitializeComponent();
         }
         private void Form1_Load(object sender, EventArgs e)
-        {
-
+        {           
         }
 
         private void btnKaydet_Click(object sender, System.EventArgs e)
+        {
+           
+        }
+
+        private void Form1_Shown(object sender, EventArgs e)
         {
             try
             {
@@ -36,21 +40,15 @@ namespace TelefonRehberi
                         Dataoku.GetValue(6),
                         Dataoku.GetValue(7),
                         Dataoku.GetValue(8),
+                        Dataoku.GetValue(9),
                         Dataoku.GetValue(10)
                     });
                 }
-        
-              
-               
-
             }
             catch (Exception hata)
             {
-
                 MessageBox.Show("Sqlite Hatası :" + hata);
             }
         }
-
-       
     }
 }
