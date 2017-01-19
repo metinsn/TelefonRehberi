@@ -8,6 +8,7 @@ namespace TelefonRehberi
 {
     class MusteriKayit
     {
+        public int ID { get; set; }
         public string adi { get; set; }
         public string soyadi { get; set; }
         public int tel1 { get; set; }

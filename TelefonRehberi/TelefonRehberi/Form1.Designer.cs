@@ -49,19 +49,19 @@
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtboxAdres = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtboxIl = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txtboxAcıklama = new System.Windows.Forms.TextBox();
             this.txtboxCepTelefon1 = new System.Windows.Forms.MaskedTextBox();
             this.txtboxCepTelefon2 = new System.Windows.Forms.MaskedTextBox();
             this.txtboxTelefon2 = new System.Windows.Forms.MaskedTextBox();
             this.txtboxTelefon1 = new System.Windows.Forms.MaskedTextBox();
             this.txtboxIlce = new System.Windows.Forms.TextBox();
             this.btnSil = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtboxID = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btnKaydet = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid)).BeginInit();
@@ -178,8 +178,10 @@
             this.dgrid.MultiSelect = false;
             this.dgrid.Name = "dgrid";
             this.dgrid.ReadOnly = true;
+            this.dgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgrid.Size = new System.Drawing.Size(990, 426);
             this.dgrid.TabIndex = 12;
+            this.dgrid.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_CellContentDoubleClick);
             // 
             // Column11
             // 
@@ -259,16 +261,16 @@
             this.label5.TabIndex = 14;
             this.label5.Text = "Adres           :";
             // 
-            // textBox7
+            // txtboxAdres
             // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox7.Location = new System.Drawing.Point(140, 135);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox7.MaxLength = 200;
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(501, 26);
-            this.textBox7.TabIndex = 13;
+            this.txtboxAdres.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtboxAdres.Location = new System.Drawing.Point(140, 135);
+            this.txtboxAdres.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtboxAdres.MaxLength = 200;
+            this.txtboxAdres.Multiline = true;
+            this.txtboxAdres.Name = "txtboxAdres";
+            this.txtboxAdres.Size = new System.Drawing.Size(501, 26);
+            this.txtboxAdres.TabIndex = 13;
             // 
             // label6
             // 
@@ -316,16 +318,16 @@
             this.label8.TabIndex = 20;
             this.label8.Text = "Açıklama      :";
             // 
-            // textBox10
+            // txtboxAcıklama
             // 
-            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox10.Location = new System.Drawing.Point(140, 174);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox10.MaxLength = 200;
-            this.textBox10.Multiline = true;
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(501, 29);
-            this.textBox10.TabIndex = 19;
+            this.txtboxAcıklama.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtboxAcıklama.Location = new System.Drawing.Point(140, 174);
+            this.txtboxAcıklama.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtboxAcıklama.MaxLength = 200;
+            this.txtboxAcıklama.Multiline = true;
+            this.txtboxAcıklama.Name = "txtboxAcıklama";
+            this.txtboxAcıklama.Size = new System.Drawing.Size(501, 29);
+            this.txtboxAcıklama.TabIndex = 19;
             // 
             // txtboxCepTelefon1
             // 
@@ -386,18 +388,18 @@
             this.btnSil.Text = "SİL";
             this.btnSil.UseVisualStyleBackColor = false;
             // 
-            // textBox1
+            // txtboxID
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox1.Location = new System.Drawing.Point(932, 99);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox1.MaxLength = 30;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(45, 26);
-            this.textBox1.TabIndex = 29;
-            this.textBox1.TabStop = false;
+            this.txtboxID.Enabled = false;
+            this.txtboxID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtboxID.Location = new System.Drawing.Point(932, 99);
+            this.txtboxID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtboxID.MaxLength = 30;
+            this.txtboxID.Name = "txtboxID";
+            this.txtboxID.ReadOnly = true;
+            this.txtboxID.Size = new System.Drawing.Size(45, 29);
+            this.txtboxID.TabIndex = 29;
+            this.txtboxID.TabStop = false;
             // 
             // label9
             // 
@@ -432,7 +434,7 @@
             this.BackColor = System.Drawing.Color.DarkSalmon;
             this.ClientSize = new System.Drawing.Size(1000, 665);
             this.Controls.Add(this.btnKaydet);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtboxID);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnSil);
             this.Controls.Add(this.txtboxIlce);
@@ -441,12 +443,12 @@
             this.Controls.Add(this.txtboxCepTelefon2);
             this.Controls.Add(this.txtboxCepTelefon1);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox10);
+            this.Controls.Add(this.txtboxAcıklama);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtboxIl);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.txtboxAdres);
             this.Controls.Add(this.dgrid);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
@@ -480,12 +482,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dgrid;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtboxAdres;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtboxIl;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txtboxAcıklama;
         private System.Windows.Forms.MaskedTextBox txtboxCepTelefon1;
         private System.Windows.Forms.MaskedTextBox txtboxCepTelefon2;
         private System.Windows.Forms.MaskedTextBox txtboxTelefon2;
@@ -503,7 +505,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtboxID;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnKaydet;
     }
