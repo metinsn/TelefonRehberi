@@ -39,7 +39,7 @@ namespace TelefonRehberi
                 int kayit = komut.ExecuteNonQuery();
                 if (kayit > 0)
                 {
-                    MessageBox.Show("\tKaydedildi");
+                    MessageBox.Show("  Kaydedildi");
                 }
                 else
                 {
@@ -47,6 +47,7 @@ namespace TelefonRehberi
                 }
                 baglan.Cancel();
                 gridyenile();
+                temizle();
             }
             else
             {
@@ -61,33 +62,7 @@ namespace TelefonRehberi
             gridyenile();
         }
 
-        private void dgrid_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            m.ID = Convert.ToInt32(dgrid.CurrentRow.Cells[0].Value);
-            m.adi = dgrid.CurrentRow.Cells[1].Value.ToString();
-            m.soyadi = dgrid.CurrentRow.Cells[2].Value.ToString();
-            m.tel1 = Convert.ToInt32(dgrid.CurrentRow.Cells[3].Value);
-            m.tel2 = Convert.ToInt32(dgrid.CurrentRow.Cells[4].Value);
-            m.ceptel1 = Convert.ToInt32(dgrid.CurrentRow.Cells[5].Value);
-            m.ceptel2 = Convert.ToInt32(dgrid.CurrentRow.Cells[6].Value);
-            m.il = dgrid.CurrentRow.Cells[7].Value.ToString();
-            m.ilce = dgrid.CurrentRow.Cells[8].Value.ToString();
-            m.adres = dgrid.CurrentRow.Cells[9].Value.ToString();
-            m.not = dgrid.CurrentRow.Cells[10].Value.ToString();
-
-            txtboxID.Text = m.ID.ToString();
-            txtboxAdi.Text = m.adi;
-            txtboxSoyAdi.Text = m.soyadi;
-            txtboxTelefon1.Text = m.tel1.ToString();
-            txtboxTelefon2.Text = m.tel2.ToString();
-            txtboxCepTelefon1.Text = m.ceptel1.ToString();
-            txtboxCepTelefon2.Text = m.ceptel2.ToString();
-            txtboxIl.Text = m.il;
-            txtboxIlce.Text = m.ilce;
-            txtboxAdres.Text = m.adres;
-            txtboxAcıklama.Text = m.not;
-        }
-
+       
         private void btnSil_Click(object sender, EventArgs e)
         {
             if (txtboxID.Text != "")
@@ -100,7 +75,7 @@ namespace TelefonRehberi
                 int kayit = komut.ExecuteNonQuery();
                 if (kayit > 0)
                 {
-                    MessageBox.Show("\tSilindi");
+                    MessageBox.Show("   Silindi");
                 }
                 else
                 {
@@ -108,12 +83,46 @@ namespace TelefonRehberi
                 }
                 baglan.Cancel();
                 gridyenile();
+                temizle();
             }
             else
             {
-                MessageBox.Show("Gridden seçiniz !!!");
+                MessageBox.Show("Gridden seçiniz yada sıra no giriniz !!!");
             }
 
+        }
+
+        private void dgrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < dgrid.RowCount-1)
+            {
+                m.ID = Convert.ToInt32(dgrid.CurrentRow.Cells[0].Value);
+                m.adi = dgrid.CurrentRow.Cells[1].Value.ToString();
+                m.soyadi = dgrid.CurrentRow.Cells[2].Value.ToString();
+                m.tel1 = Convert.ToInt32(dgrid.CurrentRow.Cells[3].Value);
+                m.tel2 = Convert.ToInt32(dgrid.CurrentRow.Cells[4].Value);
+                m.ceptel1 = Convert.ToInt32(dgrid.CurrentRow.Cells[5].Value);
+                m.ceptel2 = Convert.ToInt32(dgrid.CurrentRow.Cells[6].Value);
+                m.il = dgrid.CurrentRow.Cells[7].Value.ToString();
+                m.ilce = dgrid.CurrentRow.Cells[8].Value.ToString();
+                m.adres = dgrid.CurrentRow.Cells[9].Value.ToString();
+                m.not = dgrid.CurrentRow.Cells[10].Value.ToString();
+
+                txtboxID.Text = m.ID.ToString();
+                txtboxAdi.Text = m.adi;
+                txtboxSoyAdi.Text = m.soyadi;
+                txtboxTelefon1.Text = m.tel1.ToString();
+                txtboxTelefon2.Text = m.tel2.ToString();
+                txtboxCepTelefon1.Text = m.ceptel1.ToString();
+                txtboxCepTelefon2.Text = m.ceptel2.ToString();
+                txtboxIl.Text = m.il;
+                txtboxIlce.Text = m.ilce;
+                txtboxAdres.Text = m.adres;
+                txtboxAcıklama.Text = m.not;
+            }
+            
+
+           
         }
         private void gridyenile()
         {
@@ -149,6 +158,64 @@ namespace TelefonRehberi
                 MessageBox.Show("Sqlite Hatası :" + hata);
             }
 
+        }
+        private void temizle()
+        {
+            txtboxID.Text = "";
+            txtboxAdi.Text = "";
+            txtboxSoyAdi.Text = "";
+            txtboxTelefon1.Text = "";
+            txtboxTelefon2.Text = "";
+            txtboxCepTelefon1.Text = "";
+            txtboxCepTelefon2.Text = "";
+            txtboxIl.Text = "";
+            txtboxIlce.Text = "";
+            txtboxAdres.Text = "";
+            txtboxAcıklama.Text = "";
+        }
+
+        private void txtboxAdi_TextChanged(object sender, EventArgs e)
+        {
+            if (txtboxAdi.Text!="")
+            {
+                try
+                {
+                    SQLiteConnection baglan = new SQLiteConnection();
+                    baglan.ConnectionString = ("Data Source=DatabaseSqlite/Musteriler_sqllite.db3;Compress=True;Version=3");
+                    SQLiteCommand komut = new SQLiteCommand("select * from musteri where adi like '%@isimara%'", baglan);
+                    komut.Parameters.AddWithValue("@isimara", txtboxAdi.Text);
+                    baglan.Open();
+                    dgrid.Rows.Clear();
+                    SQLiteDataReader Dataoku = komut.ExecuteReader();
+                    while (Dataoku.Read())
+                    {
+                        dgrid.Rows.Add(new object[] {
+                        Dataoku.GetValue(0),
+                        Dataoku.GetValue(1),
+                        Dataoku.GetValue(2),
+                        Dataoku.GetValue(3),
+                        Dataoku.GetValue(4),
+                        Dataoku.GetValue(5),
+                        Dataoku.GetValue(6),
+                        Dataoku.GetValue(7),
+                        Dataoku.GetValue(8),
+                        Dataoku.GetValue(9),
+                        Dataoku.GetValue(10)
+                    });
+                    }
+                    baglan.Cancel();
+                    dgrid.AutoResizeColumns();
+                }
+                catch (Exception hata)
+                {
+                    MessageBox.Show("Sqlite Hatası :" + hata);
+                }
+            }
+            else
+            {
+                gridyenile();
+            }
+           
         }
     }
 }

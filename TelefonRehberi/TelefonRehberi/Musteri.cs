@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,8 +20,8 @@ namespace TelefonRehberi
         public string il { get; set; }
         public string ilce { get; set; }
         public string adres { get; set; }
-        public string not { get; set; }
+        public string not { get; set; }       
     }
-    
 
+    
 }
