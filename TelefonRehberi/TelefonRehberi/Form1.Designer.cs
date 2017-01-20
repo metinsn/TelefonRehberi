@@ -387,6 +387,7 @@
             this.btnSil.TabIndex = 27;
             this.btnSil.Text = "SİL";
             this.btnSil.UseVisualStyleBackColor = false;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // txtboxID
             // 
@@ -480,7 +481,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dgrid;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtboxAdres;
         private System.Windows.Forms.Label label6;
@@ -508,6 +508,7 @@
         private System.Windows.Forms.TextBox txtboxID;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnKaydet;
+        public System.Windows.Forms.DataGridView dgrid;
     }
 }
 
