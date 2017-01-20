@@ -62,7 +62,7 @@ namespace TelefonRehberi
             gridyenile();
         }
 
-       
+
         private void btnSil_Click(object sender, EventArgs e)
         {
             if (txtboxID.Text != "")
@@ -94,7 +94,7 @@ namespace TelefonRehberi
 
         private void dgrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < dgrid.RowCount-1)
+            if (e.RowIndex < dgrid.RowCount - 1)
             {
                 m.ID = Convert.ToInt32(dgrid.CurrentRow.Cells[0].Value);
                 m.adi = dgrid.CurrentRow.Cells[1].Value.ToString();
@@ -120,17 +120,62 @@ namespace TelefonRehberi
                 txtboxAdres.Text = m.adres;
                 txtboxAcıklama.Text = m.not;
             }
-            
 
-           
+
+
         }
         private void gridyenile()
         {
-            try
+
+            SQLiteConnection baglan = new SQLiteConnection();
+            baglan.ConnectionString = ("Data Source=DatabaseSqlite/Musteriler_sqllite.db3;Compress=True;Version=3");
+            SQLiteCommand komut = new SQLiteCommand("select * from musteri order by ID desc", baglan);
+            baglan.Open();
+            dgrid.Rows.Clear();
+            SQLiteDataReader Dataoku = komut.ExecuteReader();
+            while (Dataoku.Read())
+            {
+                dgrid.Rows.Add(new object[] {
+                        Dataoku.GetValue(0),
+                        Dataoku.GetValue(1),
+                        Dataoku.GetValue(2),
+                        Dataoku.GetValue(3),
+                        Dataoku.GetValue(4),
+                        Dataoku.GetValue(5),
+                        Dataoku.GetValue(6),
+                        Dataoku.GetValue(7),
+                        Dataoku.GetValue(8),
+                        Dataoku.GetValue(9),
+                        Dataoku.GetValue(10)
+                    });
+            }
+            baglan.Cancel();
+            dgrid.AutoResizeColumns();
+        }
+
+        private void temizle()
+        {
+            txtboxID.Text = "";
+            txtboxAdi.Text = "";
+            txtboxSoyAdi.Text = "";
+            txtboxTelefon1.Text = "";
+            txtboxTelefon2.Text = "";
+            txtboxCepTelefon1.Text = "";
+            txtboxCepTelefon2.Text = "";
+            txtboxIl.Text = "";
+            txtboxIlce.Text = "";
+            txtboxAdres.Text = "";
+            txtboxAcıklama.Text = "";
+        }
+
+        private void txtboxAdi_TextChanged(object sender, EventArgs e)
+        {
+            if (txtboxAdi.Text != "")
             {
                 SQLiteConnection baglan = new SQLiteConnection();
                 baglan.ConnectionString = ("Data Source=DatabaseSqlite/Musteriler_sqllite.db3;Compress=True;Version=3");
-                SQLiteCommand komut = new SQLiteCommand("select * from musteri order by ID desc", baglan);
+                SQLiteCommand komut = new SQLiteCommand("select * from musteri where adi like @isimara", baglan);
+                komut.Parameters.AddWithValue("@isimara", '%' + txtboxAdi.Text + '%');
                 baglan.Open();
                 dgrid.Rows.Clear();
                 SQLiteDataReader Dataoku = komut.ExecuteReader();
@@ -153,69 +198,11 @@ namespace TelefonRehberi
                 baglan.Cancel();
                 dgrid.AutoResizeColumns();
             }
-            catch (Exception hata)
-            {
-                MessageBox.Show("Sqlite Hatası :" + hata);
-            }
-
-        }
-        private void temizle()
-        {
-            txtboxID.Text = "";
-            txtboxAdi.Text = "";
-            txtboxSoyAdi.Text = "";
-            txtboxTelefon1.Text = "";
-            txtboxTelefon2.Text = "";
-            txtboxCepTelefon1.Text = "";
-            txtboxCepTelefon2.Text = "";
-            txtboxIl.Text = "";
-            txtboxIlce.Text = "";
-            txtboxAdres.Text = "";
-            txtboxAcıklama.Text = "";
-        }
-
-        private void txtboxAdi_TextChanged(object sender, EventArgs e)
-        {
-            if (txtboxAdi.Text!="")
-            {
-                try
-                {
-                    SQLiteConnection baglan = new SQLiteConnection();
-                    baglan.ConnectionString = ("Data Source=DatabaseSqlite/Musteriler_sqllite.db3;Compress=True;Version=3");
-                    SQLiteCommand komut = new SQLiteCommand("select * from musteri where adi like '%@isimara%'", baglan);
-                    komut.Parameters.AddWithValue("@isimara", txtboxAdi.Text);
-                    baglan.Open();
-                    dgrid.Rows.Clear();
-                    SQLiteDataReader Dataoku = komut.ExecuteReader();
-                    while (Dataoku.Read())
-                    {
-                        dgrid.Rows.Add(new object[] {
-                        Dataoku.GetValue(0),
-                        Dataoku.GetValue(1),
-                        Dataoku.GetValue(2),
-                        Dataoku.GetValue(3),
-                        Dataoku.GetValue(4),
-                        Dataoku.GetValue(5),
-                        Dataoku.GetValue(6),
-                        Dataoku.GetValue(7),
-                        Dataoku.GetValue(8),
-                        Dataoku.GetValue(9),
-                        Dataoku.GetValue(10)
-                    });
-                    }
-                    baglan.Cancel();
-                    dgrid.AutoResizeColumns();
-                }
-                catch (Exception hata)
-                {
-                    MessageBox.Show("Sqlite Hatası :" + hata);
-                }
-            }
             else
             {
                 gridyenile();
             }
-           
+
         }
     }
 }

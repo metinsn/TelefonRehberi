@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtboxAdi = new System.Windows.Forms.TextBox();
             this.lblAdi = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,6 +53,7 @@
             this.btnSil = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.btnKaydet = new System.Windows.Forms.Button();
+            this.txtboxID = new System.Windows.Forms.MaskedTextBox();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,7 +65,6 @@
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtboxID = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -205,7 +205,6 @@
             this.txtboxAdres.Location = new System.Drawing.Point(140, 135);
             this.txtboxAdres.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtboxAdres.MaxLength = 100;
-            this.txtboxAdres.Multiline = true;
             this.txtboxAdres.Name = "txtboxAdres";
             this.txtboxAdres.Size = new System.Drawing.Size(501, 26);
             this.txtboxAdres.TabIndex = 8;
@@ -262,9 +261,8 @@
             this.txtboxAcıklama.Location = new System.Drawing.Point(140, 174);
             this.txtboxAcıklama.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtboxAcıklama.MaxLength = 100;
-            this.txtboxAcıklama.Multiline = true;
             this.txtboxAcıklama.Name = "txtboxAcıklama";
-            this.txtboxAcıklama.Size = new System.Drawing.Size(501, 29);
+            this.txtboxAcıklama.Size = new System.Drawing.Size(501, 26);
             this.txtboxAcıklama.TabIndex = 9;
             // 
             // txtboxCepTelefon1
@@ -353,6 +351,16 @@
             this.btnKaydet.UseVisualStyleBackColor = false;
             this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
+            // txtboxID
+            // 
+            this.txtboxID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtboxID.ForeColor = System.Drawing.Color.DarkRed;
+            this.txtboxID.Location = new System.Drawing.Point(914, 99);
+            this.txtboxID.Mask = "000000";
+            this.txtboxID.Name = "txtboxID";
+            this.txtboxID.Size = new System.Drawing.Size(73, 26);
+            this.txtboxID.TabIndex = 29;
+            // 
             // Column11
             // 
             this.Column11.HeaderText = "Sıra";
@@ -376,9 +384,9 @@
             // 
             // Column3
             // 
-            dataGridViewCellStyle4.Format = "N0";
-            dataGridViewCellStyle4.NullValue = null;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Format = "N0";
+            dataGridViewCellStyle1.NullValue = null;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle1;
             this.Column3.HeaderText = "Telefon";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
@@ -400,7 +408,7 @@
             // 
             // Column6
             // 
-            this.Column6.HeaderText = "Cep tel. 2";
+            this.Column6.HeaderText = "Cep Tel. 2";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
             this.Column6.Width = 86;
@@ -432,15 +440,6 @@
             this.Column10.Name = "Column10";
             this.Column10.ReadOnly = true;
             this.Column10.Width = 86;
-            // 
-            // txtboxID
-            // 
-            this.txtboxID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtboxID.Location = new System.Drawing.Point(914, 99);
-            this.txtboxID.Mask = "000000";
-            this.txtboxID.Name = "txtboxID";
-            this.txtboxID.Size = new System.Drawing.Size(73, 26);
-            this.txtboxID.TabIndex = 29;
             // 
             // Form1
             // 
@@ -512,6 +511,8 @@
         private System.Windows.Forms.Button btnSil;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnKaydet;
+        private System.Windows.Forms.MaskedTextBox txtboxID;
+        internal System.Windows.Forms.DataGridView dgrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -523,8 +524,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.MaskedTextBox txtboxID;
-        internal System.Windows.Forms.DataGridView dgrid;
     }
 }
 
