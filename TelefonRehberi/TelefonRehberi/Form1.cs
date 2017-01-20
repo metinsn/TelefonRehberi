@@ -20,17 +20,17 @@ namespace TelefonRehberi
 
         private void btnKaydet_Click(object sender, System.EventArgs e)
         {
-            if (txtboxAdi.Text !="" && txtboxTelefon1.Text !="")
+            if (txtboxAdi.Text != "" && txtboxTelefon1.Text != "")
             {
                 SQLiteConnection baglan = new SQLiteConnection();
                 baglan.ConnectionString = ("Data Source=DatabaseSqlite/Musteriler_sqllite.db3;Compress=True;Version=3");
                 SQLiteCommand komut = new SQLiteCommand("insert into musteri (adi,soyadi,telefon1,telefon2,ceptel1,ceptel2,adres,il,ilce,aciklama) values(@adi,@soyadi,@telefon1,@telefon2,@ceptel1,@ceptel2,@adres,@il,@ilce,@aciklama)", baglan);
                 komut.Parameters.AddWithValue("@adi", txtboxAdi.Text);
                 komut.Parameters.AddWithValue("@soyadi", txtboxSoyAdi.Text);
-                komut.Parameters.AddWithValue("@telefon1", txtboxTelefon1.Text);
-                komut.Parameters.AddWithValue("@telefon2", txtboxTelefon2.Text);
-                komut.Parameters.AddWithValue("@ceptel1", txtboxCepTelefon1.Text);
-                komut.Parameters.AddWithValue("@ceptel2", txtboxCepTelefon2.Text);
+                komut.Parameters.AddWithValue("@telefon1", txtboxTelefon1.Text.Replace("-", ""));
+                komut.Parameters.AddWithValue("@telefon2", txtboxTelefon2.Text.Replace("-", ""));
+                komut.Parameters.AddWithValue("@ceptel1", txtboxCepTelefon1.Text.Replace("-", ""));
+                komut.Parameters.AddWithValue("@ceptel2", txtboxCepTelefon2.Text.Replace("-", ""));
                 komut.Parameters.AddWithValue("@adres", txtboxIl.Text);
                 komut.Parameters.AddWithValue("@il", txtboxIlce.Text);
                 komut.Parameters.AddWithValue("@ilce", txtboxAdres.Text);
@@ -39,7 +39,7 @@ namespace TelefonRehberi
                 int kayit = komut.ExecuteNonQuery();
                 if (kayit > 0)
                 {
-                    MessageBox.Show("Kaydedildi");
+                    MessageBox.Show("\tKaydedildi");
                 }
                 else
                 {
@@ -53,12 +53,12 @@ namespace TelefonRehberi
                 MessageBox.Show("Alanları doldurun !!!");
             }
 
-            
+
         }
 
         private void Form1_Shown(object sender, EventArgs e)
         {
-            gridyenile();            
+            gridyenile();
         }
 
         private void dgrid_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -100,7 +100,7 @@ namespace TelefonRehberi
                 int kayit = komut.ExecuteNonQuery();
                 if (kayit > 0)
                 {
-                    MessageBox.Show("Silindi");
+                    MessageBox.Show("\tSilindi");
                 }
                 else
                 {
@@ -121,7 +121,7 @@ namespace TelefonRehberi
             {
                 SQLiteConnection baglan = new SQLiteConnection();
                 baglan.ConnectionString = ("Data Source=DatabaseSqlite/Musteriler_sqllite.db3;Compress=True;Version=3");
-                SQLiteCommand komut = new SQLiteCommand("select * from musteri", baglan);
+                SQLiteCommand komut = new SQLiteCommand("select * from musteri order by ID desc", baglan);
                 baglan.Open();
                 dgrid.Rows.Clear();
                 SQLiteDataReader Dataoku = komut.ExecuteReader();
@@ -148,7 +148,7 @@ namespace TelefonRehberi
             {
                 MessageBox.Show("Sqlite Hatası :" + hata);
             }
-            
+
         }
     }
 }
