@@ -109,7 +109,7 @@
             this.txtboxSoyAdi.MaxLength = 30;
             this.txtboxSoyAdi.Name = "txtboxSoyAdi";
             this.txtboxSoyAdi.Size = new System.Drawing.Size(148, 26);
-            this.txtboxSoyAdi.TabIndex = 2;
+            this.txtboxSoyAdi.TabIndex = 1;
             // 
             // Telefon
             // 
@@ -181,6 +181,7 @@
             this.dgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgrid.Size = new System.Drawing.Size(990, 426);
             this.dgrid.TabIndex = 12;
+            this.dgrid.TabStop = false;
             this.dgrid.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_CellContentDoubleClick);
             // 
             // Column11
@@ -266,11 +267,11 @@
             this.txtboxAdres.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtboxAdres.Location = new System.Drawing.Point(140, 135);
             this.txtboxAdres.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtboxAdres.MaxLength = 200;
+            this.txtboxAdres.MaxLength = 100;
             this.txtboxAdres.Multiline = true;
             this.txtboxAdres.Name = "txtboxAdres";
             this.txtboxAdres.Size = new System.Drawing.Size(501, 26);
-            this.txtboxAdres.TabIndex = 13;
+            this.txtboxAdres.TabIndex = 8;
             // 
             // label6
             // 
@@ -304,7 +305,7 @@
             this.txtboxIl.MaxLength = 30;
             this.txtboxIl.Name = "txtboxIl";
             this.txtboxIl.Size = new System.Drawing.Size(148, 26);
-            this.txtboxIl.TabIndex = 15;
+            this.txtboxIl.TabIndex = 6;
             // 
             // label8
             // 
@@ -323,11 +324,11 @@
             this.txtboxAcıklama.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtboxAcıklama.Location = new System.Drawing.Point(140, 174);
             this.txtboxAcıklama.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtboxAcıklama.MaxLength = 200;
+            this.txtboxAcıklama.MaxLength = 100;
             this.txtboxAcıklama.Multiline = true;
             this.txtboxAcıklama.Name = "txtboxAcıklama";
             this.txtboxAcıklama.Size = new System.Drawing.Size(501, 29);
-            this.txtboxAcıklama.TabIndex = 19;
+            this.txtboxAcıklama.TabIndex = 9;
             // 
             // txtboxCepTelefon1
             // 
@@ -336,7 +337,7 @@
             this.txtboxCepTelefon1.Mask = "(999) 000-00-00";
             this.txtboxCepTelefon1.Name = "txtboxCepTelefon1";
             this.txtboxCepTelefon1.Size = new System.Drawing.Size(144, 26);
-            this.txtboxCepTelefon1.TabIndex = 22;
+            this.txtboxCepTelefon1.TabIndex = 4;
             // 
             // txtboxCepTelefon2
             // 
@@ -345,7 +346,7 @@
             this.txtboxCepTelefon2.Mask = "(999) 000-00-00";
             this.txtboxCepTelefon2.Name = "txtboxCepTelefon2";
             this.txtboxCepTelefon2.Size = new System.Drawing.Size(144, 26);
-            this.txtboxCepTelefon2.TabIndex = 23;
+            this.txtboxCepTelefon2.TabIndex = 5;
             // 
             // txtboxTelefon2
             // 
@@ -354,7 +355,7 @@
             this.txtboxTelefon2.Mask = "(999) 000-00-00";
             this.txtboxTelefon2.Name = "txtboxTelefon2";
             this.txtboxTelefon2.Size = new System.Drawing.Size(145, 26);
-            this.txtboxTelefon2.TabIndex = 25;
+            this.txtboxTelefon2.TabIndex = 3;
             // 
             // txtboxTelefon1
             // 
@@ -363,7 +364,7 @@
             this.txtboxTelefon1.Mask = "(999) 000-00-00";
             this.txtboxTelefon1.Name = "txtboxTelefon1";
             this.txtboxTelefon1.Size = new System.Drawing.Size(145, 26);
-            this.txtboxTelefon1.TabIndex = 24;
+            this.txtboxTelefon1.TabIndex = 2;
             // 
             // txtboxIlce
             // 
@@ -373,7 +374,7 @@
             this.txtboxIlce.MaxLength = 30;
             this.txtboxIlce.Name = "txtboxIlce";
             this.txtboxIlce.Size = new System.Drawing.Size(178, 26);
-            this.txtboxIlce.TabIndex = 26;
+            this.txtboxIlce.TabIndex = 7;
             // 
             // btnSil
             // 
@@ -384,7 +385,7 @@
             this.btnSil.Location = new System.Drawing.Point(833, 135);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(155, 68);
-            this.btnSil.TabIndex = 27;
+            this.btnSil.TabIndex = 11;
             this.btnSil.Text = "SİL";
             this.btnSil.UseVisualStyleBackColor = false;
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
@@ -407,12 +408,12 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label9.Location = new System.Drawing.Point(881, 102);
+            this.label9.Location = new System.Drawing.Point(857, 102);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(43, 20);
+            this.label9.Size = new System.Drawing.Size(67, 20);
             this.label9.TabIndex = 28;
-            this.label9.Text = "ID  :";
+            this.label9.Text = "SIRA  :";
             // 
             // btnKaydet
             // 
@@ -423,7 +424,7 @@
             this.btnKaydet.Location = new System.Drawing.Point(672, 135);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(155, 68);
-            this.btnKaydet.TabIndex = 30;
+            this.btnKaydet.TabIndex = 10;
             this.btnKaydet.Text = "KAYDET";
             this.btnKaydet.UseVisualStyleBackColor = false;
             this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
