@@ -17,11 +17,11 @@ namespace TelefonRehberi
         public int tel2 { get; set; }
         public int ceptel1 { get; set; }
         public int ceptel2 { get; set; }
+        public string adres { get; set; }
         public string il { get; set; }
         public string ilce { get; set; }
-        public string adres { get; set; }
-        public string not { get; set; }       
+        public string not { get; set; }
     }
 
-    
+
 }

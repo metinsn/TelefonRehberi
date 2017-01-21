@@ -27,13 +27,13 @@ namespace TelefonRehberi
                 SQLiteCommand komut = new SQLiteCommand("insert into musteri (adi,soyadi,telefon1,telefon2,ceptel1,ceptel2,adres,il,ilce,aciklama) values(@adi,@soyadi,@telefon1,@telefon2,@ceptel1,@ceptel2,@adres,@il,@ilce,@aciklama)", baglan);
                 komut.Parameters.AddWithValue("@adi", txtboxAdi.Text);
                 komut.Parameters.AddWithValue("@soyadi", txtboxSoyAdi.Text);
-                komut.Parameters.AddWithValue("@telefon1", txtboxTelefon1.Text.Replace("-", ""));
-                komut.Parameters.AddWithValue("@telefon2", txtboxTelefon2.Text.Replace("-", ""));
-                komut.Parameters.AddWithValue("@ceptel1", txtboxCepTelefon1.Text.Replace("-", ""));
-                komut.Parameters.AddWithValue("@ceptel2", txtboxCepTelefon2.Text.Replace("-", ""));
-                komut.Parameters.AddWithValue("@adres", txtboxIl.Text);
-                komut.Parameters.AddWithValue("@il", txtboxIlce.Text);
-                komut.Parameters.AddWithValue("@ilce", txtboxAdres.Text);
+                komut.Parameters.AddWithValue("@telefon1", txtboxTelefon1.Text);
+                komut.Parameters.AddWithValue("@telefon2", txtboxTelefon2.Text);
+                komut.Parameters.AddWithValue("@ceptel1", txtboxCepTelefon1.Text);
+                komut.Parameters.AddWithValue("@ceptel2", txtboxCepTelefon2.Text);
+                komut.Parameters.AddWithValue("@adres", txtboxAdres.Text);
+                komut.Parameters.AddWithValue("@ilce", txtboxIlce.Text);
+                komut.Parameters.AddWithValue("@il", txtboxIl.Text);
                 komut.Parameters.AddWithValue("@aciklama", txtboxAcıklama.Text);
                 baglan.Open();
                 int kayit = komut.ExecuteNonQuery();
@@ -103,9 +103,9 @@ namespace TelefonRehberi
                 m.tel2 = Convert.ToInt32(dgrid.CurrentRow.Cells[4].Value);
                 m.ceptel1 = Convert.ToInt32(dgrid.CurrentRow.Cells[5].Value);
                 m.ceptel2 = Convert.ToInt32(dgrid.CurrentRow.Cells[6].Value);
-                m.il = dgrid.CurrentRow.Cells[7].Value.ToString();
-                m.ilce = dgrid.CurrentRow.Cells[8].Value.ToString();
-                m.adres = dgrid.CurrentRow.Cells[9].Value.ToString();
+                m.adres = dgrid.CurrentRow.Cells[7].Value.ToString();
+                m.il = dgrid.CurrentRow.Cells[8].Value.ToString();
+                m.ilce = dgrid.CurrentRow.Cells[9].Value.ToString();
                 m.not = dgrid.CurrentRow.Cells[10].Value.ToString();
 
                 txtboxID.Text = m.ID.ToString();
@@ -174,7 +174,7 @@ namespace TelefonRehberi
             {
                 SQLiteConnection baglan = new SQLiteConnection();
                 baglan.ConnectionString = ("Data Source=DatabaseSqlite/Musteriler_sqllite.db3;Compress=True;Version=3");
-                SQLiteCommand komut = new SQLiteCommand("select * from musteri where adi like @isimara", baglan);
+                SQLiteCommand komut = new SQLiteCommand("select * from musteri where adi like @isimara order by ID desc", baglan);
                 komut.Parameters.AddWithValue("@isimara", '%' + txtboxAdi.Text + '%');
                 baglan.Open();
                 dgrid.Rows.Clear();
@@ -202,7 +202,7 @@ namespace TelefonRehberi
             {
                 gridyenile();
             }
-
         }
+       
     }
 }
