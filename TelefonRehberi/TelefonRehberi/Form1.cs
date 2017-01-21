@@ -126,16 +126,17 @@ namespace TelefonRehberi
         }
         private void gridyenile()
         {
-
-            SQLiteConnection baglan = new SQLiteConnection();
-            baglan.ConnectionString = ("Data Source=DatabaseSqlite/Musteriler_sqllite.db3;Compress=True;Version=3");
-            SQLiteCommand komut = new SQLiteCommand("select * from musteri order by ID desc", baglan);
-            baglan.Open();
-            dgrid.Rows.Clear();
-            SQLiteDataReader Dataoku = komut.ExecuteReader();
-            while (Dataoku.Read())
+            try
             {
-                dgrid.Rows.Add(new object[] {
+                SQLiteConnection baglan = new SQLiteConnection();
+                baglan.ConnectionString = ("Data Source=DatabaseSqlite/Musteriler_sqllite.db3;Compress=True;Version=3");
+                SQLiteCommand komut = new SQLiteCommand("select * from musteri order by ID desc", baglan);
+                baglan.Open();
+                dgrid.Rows.Clear();
+                SQLiteDataReader Dataoku = komut.ExecuteReader();
+                while (Dataoku.Read())
+                {
+                    dgrid.Rows.Add(new object[] {
                         Dataoku.GetValue(0),
                         Dataoku.GetValue(1),
                         Dataoku.GetValue(2),
@@ -148,9 +149,16 @@ namespace TelefonRehberi
                         Dataoku.GetValue(9),
                         Dataoku.GetValue(10)
                     });
+                }
+                baglan.Cancel();
+                dgrid.AutoResizeColumns();
             }
-            baglan.Cancel();
-            dgrid.AutoResizeColumns();
+            catch (Exception e)
+            {
+
+                MessageBox.Show("Hata Uyarısı :" + e.Message);
+            }
+
         }
 
         private void temizle()
@@ -203,6 +211,6 @@ namespace TelefonRehberi
                 gridyenile();
             }
         }
-       
+
     }
 }
