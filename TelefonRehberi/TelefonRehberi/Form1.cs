@@ -178,7 +178,7 @@ namespace TelefonRehberi
 
         private void txtboxAdi_TextChanged(object sender, EventArgs e)
         {
-            if (txtboxAdi.Text != "")
+            if (txtboxAdi.Text != "" && rbtnArama.Checked==true)
             {
                 SQLiteConnection baglan = new SQLiteConnection();
                 baglan.ConnectionString = ("Data Source=DatabaseSqlite/Musteriler_sqllite.db3;Compress=True;Version=3");
@@ -212,5 +212,77 @@ namespace TelefonRehberi
             }
         }
 
+        private void txtboxTelefon1_TextChanged(object sender, EventArgs e)
+        {
+            if (txtboxTelefon1.Text != "" && rbtnArama.Checked == true)
+            {
+                SQLiteConnection baglan = new SQLiteConnection();
+                baglan.ConnectionString = ("Data Source=DatabaseSqlite/Musteriler_sqllite.db3;Compress=True;Version=3");
+                SQLiteCommand komut = new SQLiteCommand("select * from musteri where telefon1 like @telara order by ID desc", baglan);
+                komut.Parameters.AddWithValue("@telara", '%' + txtboxTelefon1.Text + '%');
+                baglan.Open();
+                dgrid.Rows.Clear();
+                SQLiteDataReader Dataoku = komut.ExecuteReader();
+                while (Dataoku.Read())
+                {
+                    dgrid.Rows.Add(new object[] {
+                        Dataoku.GetValue(0),
+                        Dataoku.GetValue(1),
+                        Dataoku.GetValue(2),
+                        Dataoku.GetValue(3),
+                        Dataoku.GetValue(4),
+                        Dataoku.GetValue(5),
+                        Dataoku.GetValue(6),
+                        Dataoku.GetValue(7),
+                        Dataoku.GetValue(8),
+                        Dataoku.GetValue(9),
+                        Dataoku.GetValue(10)
+                    });
+                }
+                baglan.Cancel();
+                dgrid.AutoResizeColumns();
+            }
+            else
+            {
+                gridyenile();
+            }
+        }
+
+        private void txtboxCepTelefon1_TextChanged(object sender, EventArgs e)
+        {
+            if (txtboxCepTelefon1.Text != "" && rbtnArama.Checked == true)
+            {
+                SQLiteConnection baglan = new SQLiteConnection();
+                baglan.ConnectionString = ("Data Source=DatabaseSqlite/Musteriler_sqllite.db3;Compress=True;Version=3");
+                SQLiteCommand komut = new SQLiteCommand("select * from musteri where ceptel1 like @ceptelara order by ID desc", baglan);
+                komut.Parameters.AddWithValue("@ceptelara", '%' + txtboxCepTelefon1.Text + '%');
+                baglan.Open();
+                dgrid.Rows.Clear();
+                SQLiteDataReader Dataoku = komut.ExecuteReader();
+                while (Dataoku.Read())
+                {
+                    dgrid.Rows.Add(new object[] {
+                        Dataoku.GetValue(0),
+                        Dataoku.GetValue(1),
+                        Dataoku.GetValue(2),
+                        Dataoku.GetValue(3),
+                        Dataoku.GetValue(4),
+                        Dataoku.GetValue(5),
+                        Dataoku.GetValue(6),
+                        Dataoku.GetValue(7),
+                        Dataoku.GetValue(8),
+                        Dataoku.GetValue(9),
+                        Dataoku.GetValue(10)
+                    });
+                }
+                baglan.Cancel();
+                dgrid.AutoResizeColumns();
+            }
+            else
+            {
+                gridyenile();
+            }
+        }
     }
+    
 }
