@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtboxAdi = new System.Windows.Forms.TextBox();
             this.lblAdi = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -67,6 +68,7 @@
             this.txtboxID = new System.Windows.Forms.MaskedTextBox();
             this.rbtnArama = new System.Windows.Forms.RadioButton();
             this.rbtnKayıt = new System.Windows.Forms.RadioButton();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -212,9 +214,9 @@
             // 
             // Column3
             // 
-            dataGridViewCellStyle6.Format = "N0";
-            dataGridViewCellStyle6.NullValue = null;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle10.Format = "N0";
+            dataGridViewCellStyle10.NullValue = null;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle10;
             this.Column3.HeaderText = "Telefon";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
@@ -412,12 +414,12 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label9.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label9.ForeColor = System.Drawing.Color.DarkRed;
             this.label9.Location = new System.Drawing.Point(840, 105);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(67, 20);
+            this.label9.Size = new System.Drawing.Size(59, 22);
             this.label9.TabIndex = 28;
             this.label9.Text = "SIRA  :";
             // 
@@ -455,6 +457,8 @@
             this.rbtnArama.Size = new System.Drawing.Size(79, 24);
             this.rbtnArama.TabIndex = 32;
             this.rbtnArama.Text = "Arama";
+            this.toolTip1.SetToolTip(this.rbtnArama, "Adı,Telefon,Cep Telefon alanlarında arama yapılır.\r\nBüyük küçük harf duyarlıdır !" +
+        "");
             this.rbtnArama.UseVisualStyleBackColor = true;
             // 
             // rbtnKayıt
@@ -470,6 +474,10 @@
             this.rbtnKayıt.TabStop = true;
             this.rbtnKayıt.Text = "Kayıt";
             this.rbtnKayıt.UseVisualStyleBackColor = true;
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.AutomaticDelay = 250;
             // 
             // Form1
             // 
@@ -558,6 +566,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.RadioButton rbtnArama;
         private System.Windows.Forms.RadioButton rbtnKayıt;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

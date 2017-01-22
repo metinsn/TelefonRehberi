@@ -87,7 +87,7 @@ namespace TelefonRehberi
             }
             else
             {
-                MessageBox.Show("Gridden seçiniz yada sıra no giriniz !!!");
+                MessageBox.Show("Gridden seçiniz yada SIRA no giriniz !!!");
             }
 
         }
