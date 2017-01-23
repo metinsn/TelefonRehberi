@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtboxAdi = new System.Windows.Forms.TextBox();
             this.lblAdi = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -214,9 +214,9 @@
             // 
             // Column3
             // 
-            dataGridViewCellStyle10.Format = "N0";
-            dataGridViewCellStyle10.NullValue = null;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.Format = "N0";
+            dataGridViewCellStyle1.NullValue = null;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle1;
             this.Column3.HeaderText = "Telefon";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
@@ -519,6 +519,7 @@
             this.Name = "Form1";
             this.ShowIcon = false;
             this.Text = "Telefon Rehberi";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Shown += new System.EventHandler(this.Form1_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dgrid)).EndInit();
             this.ResumeLayout(false);

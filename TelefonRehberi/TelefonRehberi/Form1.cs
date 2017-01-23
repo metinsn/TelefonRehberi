@@ -9,13 +9,14 @@ namespace TelefonRehberi
     {
 
         MusteriKayit m = new MusteriKayit();
-
+       
         public Form1()
         {
-            InitializeComponent();
+            InitializeComponent();                       
         }
         private void Form1_Load(object sender, EventArgs e)
-        {
+        {      
+                 
         }
 
         private void btnKaydet_Click(object sender, System.EventArgs e)
@@ -40,6 +41,7 @@ namespace TelefonRehberi
                 if (kayit > 0)
                 {
                     MessageBox.Show("  Kaydedildi");
+
                 }
                 else
                 {
@@ -282,6 +284,11 @@ namespace TelefonRehberi
             {
                 gridyenile();
             }
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
     
