@@ -21,6 +21,7 @@ namespace TelefonRehberi
         public string il { get; set; }
         public string ilce { get; set; }
         public string not { get; set; }
+        public string sifre { get; set; }
     }
 
 

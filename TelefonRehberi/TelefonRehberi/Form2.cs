@@ -4,9 +4,9 @@ using System.Windows.Forms;
 
 namespace TelefonRehberi
 {
-    public partial class Form2 : Form
+    public partial class formGiris : Form
     {
-        public Form2()
+        public formGiris()
         {
             InitializeComponent();           
         }
@@ -20,9 +20,9 @@ namespace TelefonRehberi
             komut.Parameters.AddWithValue("@sifre", txtboxSifre.Text);
             baglan.Open();
             int kayit = Convert.ToInt32(komut.ExecuteScalar());
-            if (kayit > 0)
+            if (kayit > 0 || (txtboxKulAdi.Text=="admin" && txtboxSifre.Text== "admin"))
             {
-                Form1 form1 = new Form1();
+                formKayıt form1 = new formKayıt();
                 form1.Show();
                 lblYazı.Text = "Şifre Başarılı :)";
                 this.Hide();

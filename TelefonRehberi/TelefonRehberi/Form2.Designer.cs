@@ -1,6 +1,6 @@
 ﻿namespace TelefonRehberi
 {
-    partial class Form2
+    partial class formGiris
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.txtboxSifre = new System.Windows.Forms.TextBox();
             this.label0 = new System.Windows.Forms.Label();
             this.txtboxKulAdi = new System.Windows.Forms.TextBox();
             this.lblYazı = new System.Windows.Forms.Label();
             this.btnGiris = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -56,7 +58,7 @@
             this.txtboxSifre.MaxLength = 30;
             this.txtboxSifre.Name = "txtboxSifre";
             this.txtboxSifre.Size = new System.Drawing.Size(148, 26);
-            this.txtboxSifre.TabIndex = 5;
+            this.txtboxSifre.TabIndex = 1;
             // 
             // label0
             // 
@@ -78,7 +80,8 @@
             this.txtboxKulAdi.MaxLength = 30;
             this.txtboxKulAdi.Name = "txtboxKulAdi";
             this.txtboxKulAdi.Size = new System.Drawing.Size(148, 26);
-            this.txtboxKulAdi.TabIndex = 4;
+            this.txtboxKulAdi.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.txtboxKulAdi, "admin");
             // 
             // lblYazı
             // 
@@ -93,17 +96,21 @@
             // 
             // btnGiris
             // 
-            this.btnGiris.BackColor = System.Drawing.Color.DimGray;
+            this.btnGiris.BackColor = System.Drawing.Color.DarkGray;
             this.btnGiris.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnGiris.Location = new System.Drawing.Point(309, 12);
             this.btnGiris.Name = "btnGiris";
             this.btnGiris.Size = new System.Drawing.Size(127, 68);
-            this.btnGiris.TabIndex = 9;
+            this.btnGiris.TabIndex = 2;
             this.btnGiris.Text = "Giriş";
             this.btnGiris.UseVisualStyleBackColor = false;
             this.btnGiris.Click += new System.EventHandler(this.btnGiris_Click);
             // 
-            // Form2
+            // toolTip1
+            // 
+            this.toolTip1.AutomaticDelay = 250;
+            // 
+            // formGiris
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -115,7 +122,8 @@
             this.Controls.Add(this.txtboxSifre);
             this.Controls.Add(this.label0);
             this.Controls.Add(this.txtboxKulAdi);
-            this.Name = "Form2";
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Name = "formGiris";
             this.ShowIcon = false;
             this.Text = "Kullanıcı Girişi";
             this.ResumeLayout(false);
@@ -131,5 +139,6 @@
         private System.Windows.Forms.TextBox txtboxKulAdi;
         private System.Windows.Forms.Label lblYazı;
         private System.Windows.Forms.Button btnGiris;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

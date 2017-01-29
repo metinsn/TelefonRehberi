@@ -5,12 +5,12 @@ using System;
 namespace TelefonRehberi
 
 {
-    public partial class Form1 : Form
+    public partial class formKayıt : Form
     {
 
         MusteriKayit m = new MusteriKayit();
        
-        public Form1()
+        public formKayıt()
         {
             InitializeComponent();                       
         }
@@ -67,12 +67,12 @@ namespace TelefonRehberi
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            if (txtboxID.Text != "")
+            if (txtboxId.Text != "")
             {
                 SQLiteConnection baglan = new SQLiteConnection();
                 baglan.ConnectionString = ("Data Source=DatabaseSqlite/Musteriler_sqllite.db3;Compress=True;Version=3");
                 SQLiteCommand komut = new SQLiteCommand("delete from musteri where ID=@ID", baglan);
-                komut.Parameters.AddWithValue("@Id", txtboxID.Text);
+                komut.Parameters.AddWithValue("@Id", txtboxId.Text);
                 baglan.Open();
                 int kayit = komut.ExecuteNonQuery();
                 if (kayit > 0)
@@ -110,7 +110,7 @@ namespace TelefonRehberi
                 m.ilce = dgrid.CurrentRow.Cells[9].Value.ToString();
                 m.not = dgrid.CurrentRow.Cells[10].Value.ToString();
 
-                txtboxID.Text = m.ID.ToString();
+                txtboxId.Text = m.ID.ToString();
                 txtboxAdi.Text = m.adi;
                 txtboxSoyAdi.Text = m.soyadi;
                 txtboxTelefon1.Text = m.tel1.ToString();
@@ -165,7 +165,7 @@ namespace TelefonRehberi
 
         private void temizle()
         {
-            txtboxID.Text = "";
+            txtboxId.Text = "";
             txtboxAdi.Text = "";
             txtboxSoyAdi.Text = "";
             txtboxTelefon1.Text = "";
@@ -289,6 +289,35 @@ namespace TelefonRehberi
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void çıkışToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void hakkındaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formhakkinda frmh = new formhakkinda();
+            frmh.Show();
+        }
+
+        private void kullanıcıŞifreTanımlamaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formKulltanim frmkul = new formKulltanim();
+            frmkul.Show();
+        }
+
+        private void exceleAktarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            xlsxVer excelever = new xlsxVer();
+            excelever.Show();
+        }
+
+        private void exceldenAlToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            xlsxAl exceldenal = new xlsxAl();
+            exceldenal.Show();
         }
     }
     
