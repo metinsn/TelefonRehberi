@@ -29,7 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtboxAdi = new System.Windows.Forms.TextBox();
             this.lblAdi = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -155,7 +158,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label2.Location = new System.Drawing.Point(728, 86);
+            this.label2.Location = new System.Drawing.Point(723, 83);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(131, 20);
@@ -167,7 +170,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label4.Location = new System.Drawing.Point(728, 47);
+            this.label4.Location = new System.Drawing.Point(723, 44);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(131, 20);
@@ -194,6 +197,7 @@
             this.dgrid.MultiSelect = false;
             this.dgrid.Name = "dgrid";
             this.dgrid.ReadOnly = true;
+            this.dgrid.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgrid.Size = new System.Drawing.Size(982, 426);
             this.dgrid.TabIndex = 12;
@@ -226,9 +230,13 @@
             // 
             // Column3
             // 
-            dataGridViewCellStyle2.NullValue = null;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle1.Format = "0000-000-00-00";
+            dataGridViewCellStyle1.NullValue = "0";
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle1;
             this.Column3.HeaderText = "Telefon";
+            this.Column3.MaxInputLength = 11;
             this.Column3.MinimumWidth = 80;
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
@@ -236,6 +244,9 @@
             // 
             // Column4
             // 
+            dataGridViewCellStyle2.Format = "0000-000-00-00";
+            dataGridViewCellStyle2.NullValue = "0";
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column4.HeaderText = "Telefon 2";
             this.Column4.MinimumWidth = 80;
             this.Column4.Name = "Column4";
@@ -244,6 +255,9 @@
             // 
             // Column5
             // 
+            dataGridViewCellStyle3.Format = "0000-000-00-00";
+            dataGridViewCellStyle3.NullValue = "0";
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column5.HeaderText = "Cep Tel.";
             this.Column5.MinimumWidth = 100;
             this.Column5.Name = "Column5";
@@ -251,6 +265,9 @@
             // 
             // Column6
             // 
+            dataGridViewCellStyle4.Format = "0000-000-00-00";
+            dataGridViewCellStyle4.NullValue = "0";
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle4;
             this.Column6.HeaderText = "Cep Tel. 2";
             this.Column6.MinimumWidth = 100;
             this.Column6.Name = "Column6";
@@ -366,38 +383,38 @@
             // txtboxCepTelefon1
             // 
             this.txtboxCepTelefon1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtboxCepTelefon1.Location = new System.Drawing.Point(879, 44);
-            this.txtboxCepTelefon1.Mask = "0000000000";
+            this.txtboxCepTelefon1.Location = new System.Drawing.Point(874, 41);
+            this.txtboxCepTelefon1.Mask = "999-000-0000";
             this.txtboxCepTelefon1.Name = "txtboxCepTelefon1";
-            this.txtboxCepTelefon1.Size = new System.Drawing.Size(115, 26);
+            this.txtboxCepTelefon1.Size = new System.Drawing.Size(120, 26);
             this.txtboxCepTelefon1.TabIndex = 4;
             this.txtboxCepTelefon1.TextChanged += new System.EventHandler(this.txtboxCepTelefon1_TextChanged);
             // 
             // txtboxCepTelefon2
             // 
             this.txtboxCepTelefon2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtboxCepTelefon2.Location = new System.Drawing.Point(879, 83);
-            this.txtboxCepTelefon2.Mask = "0000000000";
+            this.txtboxCepTelefon2.Location = new System.Drawing.Point(874, 80);
+            this.txtboxCepTelefon2.Mask = "999-000-0000";
             this.txtboxCepTelefon2.Name = "txtboxCepTelefon2";
-            this.txtboxCepTelefon2.Size = new System.Drawing.Size(115, 26);
+            this.txtboxCepTelefon2.Size = new System.Drawing.Size(120, 26);
             this.txtboxCepTelefon2.TabIndex = 5;
             // 
             // txtboxTelefon2
             // 
             this.txtboxTelefon2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtboxTelefon2.Location = new System.Drawing.Point(467, 83);
-            this.txtboxTelefon2.Mask = "0000000000";
+            this.txtboxTelefon2.Mask = "999-000-0000";
             this.txtboxTelefon2.Name = "txtboxTelefon2";
-            this.txtboxTelefon2.Size = new System.Drawing.Size(111, 26);
+            this.txtboxTelefon2.Size = new System.Drawing.Size(120, 26);
             this.txtboxTelefon2.TabIndex = 3;
             // 
             // txtboxTelefon1
             // 
             this.txtboxTelefon1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtboxTelefon1.Location = new System.Drawing.Point(468, 43);
-            this.txtboxTelefon1.Mask = "0000000000";
+            this.txtboxTelefon1.Mask = "999-000-0000";
             this.txtboxTelefon1.Name = "txtboxTelefon1";
-            this.txtboxTelefon1.Size = new System.Drawing.Size(110, 26);
+            this.txtboxTelefon1.Size = new System.Drawing.Size(119, 26);
             this.txtboxTelefon1.TabIndex = 2;
             this.txtboxTelefon1.TextChanged += new System.EventHandler(this.txtboxTelefon1_TextChanged);
             // 
@@ -518,21 +535,21 @@
             // exceleAktarToolStripMenuItem
             // 
             this.exceleAktarToolStripMenuItem.Name = "exceleAktarToolStripMenuItem";
-            this.exceleAktarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exceleAktarToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.exceleAktarToolStripMenuItem.Text = "Excel\'e aktar";
             this.exceleAktarToolStripMenuItem.Click += new System.EventHandler(this.exceleAktarToolStripMenuItem_Click);
             // 
             // exceldenAlToolStripMenuItem
             // 
             this.exceldenAlToolStripMenuItem.Name = "exceldenAlToolStripMenuItem";
-            this.exceldenAlToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exceldenAlToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.exceldenAlToolStripMenuItem.Text = "Excel\'den al";
             this.exceldenAlToolStripMenuItem.Click += new System.EventHandler(this.exceldenAlToolStripMenuItem_Click);
             // 
             // çıkışToolStripMenuItem1
             // 
             this.çıkışToolStripMenuItem1.Name = "çıkışToolStripMenuItem1";
-            this.çıkışToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.çıkışToolStripMenuItem1.Size = new System.Drawing.Size(138, 22);
             this.çıkışToolStripMenuItem1.Text = "Çıkış";
             this.çıkışToolStripMenuItem1.Click += new System.EventHandler(this.çıkışToolStripMenuItem1_Click);
             // 
@@ -636,7 +653,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnKaydet;
         private System.Windows.Forms.MaskedTextBox txtboxId;
-        internal System.Windows.Forms.DataGridView dgrid;
         private System.Windows.Forms.RadioButton rbtnArama;
         private System.Windows.Forms.RadioButton rbtnKayıt;
         private System.Windows.Forms.ToolTip toolTip1;
@@ -659,6 +675,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        public System.Windows.Forms.DataGridView dgrid;
     }
 }
 

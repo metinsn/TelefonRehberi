@@ -25,7 +25,7 @@ namespace TelefonRehberi
             {
                 SQLiteConnection baglan = new SQLiteConnection();
                 baglan.ConnectionString = ("Data Source=DatabaseSqlite/Musteriler_sqllite.db3;Compress=True;Version=3");
-                SQLiteCommand komut = new SQLiteCommand("insert into musteri (adi,soyadi,telefon1,telefon2,ceptel1,ceptel2,adres,il,ilce,aciklama) values(@adi,@soyadi,@telefon1,@telefon2,@ceptel1,@ceptel2,@adres,@il,@ilce,@aciklama)", baglan);
+                SQLiteCommand komut = new SQLiteCommand("insert into musteri (adi,soyadi,telefon1,telefon2,ceptel1,ceptel2,adres,il,ilce,aciklama) values(@adi,@soyadi,replace(replace(@telefon1,' ',''),'-',''),replace(replace(@telefon2,' ',''),'-',''),replace(replace(@ceptel1,' ',''),'-',''),replace(replace(@ceptel2,' ',''),'-',''),@adres,@il,@ilce,@aciklama)", baglan);
                 komut.Parameters.AddWithValue("@adi", txtboxAdi.Text);
                 komut.Parameters.AddWithValue("@soyadi", txtboxSoyAdi.Text);
                 komut.Parameters.AddWithValue("@telefon1", txtboxTelefon1.Text);
@@ -101,10 +101,10 @@ namespace TelefonRehberi
                 m.ID = Convert.ToInt32(dgrid.CurrentRow.Cells[0].Value);
                 m.adi = dgrid.CurrentRow.Cells[1].Value.ToString();
                 m.soyadi = dgrid.CurrentRow.Cells[2].Value.ToString();
-                m.tel1 = Convert.ToInt32(dgrid.CurrentRow.Cells[3].Value);
-                m.tel2 = Convert.ToInt32(dgrid.CurrentRow.Cells[4].Value);
-                m.ceptel1 = Convert.ToInt32(dgrid.CurrentRow.Cells[5].Value);
-                m.ceptel2 = Convert.ToInt32(dgrid.CurrentRow.Cells[6].Value);
+                m.tel1 = Convert.ToInt64(dgrid.CurrentRow.Cells[3].Value);
+                m.tel2 = Convert.ToInt64(dgrid.CurrentRow.Cells[4].Value);
+                m.ceptel1 = Convert.ToInt64(dgrid.CurrentRow.Cells[5].Value);
+                m.ceptel2 = Convert.ToInt64(dgrid.CurrentRow.Cells[6].Value);
                 m.adres = dgrid.CurrentRow.Cells[7].Value.ToString();
                 m.il = dgrid.CurrentRow.Cells[8].Value.ToString();
                 m.ilce = dgrid.CurrentRow.Cells[9].Value.ToString();

@@ -13,10 +13,10 @@ namespace TelefonRehberi
         public int ID { get; set; }
         public string adi { get; set; }
         public string soyadi { get; set; }
-        public int tel1 { get; set; }
-        public int tel2 { get; set; }
-        public int ceptel1 { get; set; }
-        public int ceptel2 { get; set; }
+        public Int64 tel1 { get; set; }
+        public Int64 tel2 { get; set; }
+        public Int64 ceptel1 { get; set; }
+        public Int64 ceptel2 { get; set; }
         public string adres { get; set; }
         public string il { get; set; }
         public string ilce { get; set; }

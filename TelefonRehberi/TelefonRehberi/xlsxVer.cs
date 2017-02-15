@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
-using DocumentFormat.OpenXml;
-using DocumentFormat.OpenXml.Spreadsheet;
-using DocumentFormat.OpenXml.Packaging;
+//using DocumentFormat.OpenXml;
+//using DocumentFormat.OpenXml.Spreadsheet;
+//using DocumentFormat.OpenXml.Packaging;
 namespace TelefonRehberi
 {
     public partial class xlsxVer : Form
@@ -17,9 +17,8 @@ namespace TelefonRehberi
         {
             FolderBrowserDialog Dizin = new FolderBrowserDialog();
             Dizin.ShowDialog();
-            klasorYolu = Dizin.SelectedPath + "/Telefon Listesi.xls";
+            klasorYolu = Dizin.SelectedPath + "\\Müşteri Telefon Listesi.xlsx";
             txtboxDizin.Text = klasorYolu;
-
         }
 
         private void btnAl_Click(object sender, EventArgs e)
@@ -28,8 +27,12 @@ namespace TelefonRehberi
             {
                 if (klasorYolu != "")
                 {
+                    //Rapor rapor = new Rapor();
+                    //rapor.excelolustur(@klasorYolu);
+
+
                     Rapor rapor = new Rapor();
-                    rapor.excelolustur(@klasorYolu);
+                    rapor.excelyaz(@klasorYolu);
                 }
                 else
                 {

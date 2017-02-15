@@ -16,7 +16,9 @@ namespace TelefonRehberi
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formGiris());
+            //Application.Run(new formGiris());
+
+            Application.Run(new formKayıt());
         }
     }
 }
