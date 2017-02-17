@@ -21,7 +21,7 @@ namespace TelefonRehberi
             dosya.Visible = true;
             kitap = dosya.Workbooks.Add(Type.Missing);
             sayfa = kitap.Worksheets.Add(kitap.Worksheets[1], Type.Missing, Type.Missing, Type.Missing) as excel.Worksheet;
-            sayfa.Name = "Telefon Listesi";
+            //sayfa.Name = "Telefon Listesi";
 
             formKayıt gridform = new formKayıt();
             for (int a = 0; a < gridform.dgrid.ColumnCount; a++)

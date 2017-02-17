@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnSec = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.btnAl = new System.Windows.Forms.Button();
             this.txtboxDizin = new System.Windows.Forms.TextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // btnSec
@@ -43,6 +45,7 @@
             this.btnSec.Size = new System.Drawing.Size(77, 40);
             this.btnSec.TabIndex = 14;
             this.btnSec.Text = "Seç";
+            this.toolTip1.SetToolTip(this.btnSec, "sadece xls uzantıı excel dosyası");
             this.btnSec.UseVisualStyleBackColor = false;
             this.btnSec.Click += new System.EventHandler(this.btnSec_Click);
             // 
@@ -65,6 +68,15 @@
             this.txtboxDizin.Name = "txtboxDizin";
             this.txtboxDizin.Size = new System.Drawing.Size(345, 22);
             this.txtboxDizin.TabIndex = 16;
+            this.toolTip1.SetToolTip(this.txtboxDizin, "sadece xls uzantıı excel dosyası");
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.AutomaticDelay = 250;
+            this.toolTip1.AutoPopDelay = 5000;
+            this.toolTip1.InitialDelay = 250;
+            this.toolTip1.ReshowDelay = 50;
+            this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
             // 
             // xlsxAl
             // 
@@ -89,5 +101,6 @@
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.Button btnAl;
         private System.Windows.Forms.TextBox txtboxDizin;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

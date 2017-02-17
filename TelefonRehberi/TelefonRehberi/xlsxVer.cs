@@ -47,6 +47,7 @@ namespace TelefonRehberi
             finally
             {
                 MessageBox.Show(klasorYolu + " Dizinine Kaydedildi.");
+                this.Close();
             }
            
            
