@@ -56,6 +56,7 @@
             this.btnAl.TabIndex = 15;
             this.btnAl.Text = "Aktar";
             this.btnAl.UseVisualStyleBackColor = false;
+            this.btnAl.Click += new System.EventHandler(this.btnAl_Click);
             // 
             // txtboxDizin
             // 

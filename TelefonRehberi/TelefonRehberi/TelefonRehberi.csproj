@@ -236,7 +236,8 @@
     <Compile Include="Musteri.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rapor.cs" />
+    <Compile Include="RaporAl.cs" />
+    <Compile Include="Raporyaz.cs" />
     <Compile Include="xlsxVer.cs">
       <SubType>Form</SubType>
     </Compile>

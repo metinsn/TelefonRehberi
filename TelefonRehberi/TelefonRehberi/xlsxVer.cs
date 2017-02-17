@@ -31,7 +31,7 @@ namespace TelefonRehberi
                     //rapor.excelolustur(@klasorYolu);
 
 
-                    Rapor rapor = new Rapor();
+                    Raporyaz rapor = new Raporyaz();
                     rapor.excelyaz(@klasorYolu);
                 }
                 else

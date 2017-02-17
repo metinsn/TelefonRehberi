@@ -16,13 +16,43 @@ namespace TelefonRehberi
         {
             InitializeComponent();
         }
-
+        string klasorYolu="";
         private void btnSec_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog Dizin = new FolderBrowserDialog();
+            OpenFileDialog Dizin = new OpenFileDialog();
+            Dizin.Filter = "Excel Dosyası(*.xlsx)|*.xlsx|Excel Dosyası(*.xls)|*.xls";
+            Dizin.FilterIndex = 2;
+            Dizin.Title = "Excel Dosyasını Seçiniz";
             Dizin.ShowDialog();
-            string klasorYolu = Dizin.SelectedPath;
+            klasorYolu = Dizin.FileName;
             txtboxDizin.Text = klasorYolu;
+        }
+
+        private void btnAl_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (klasorYolu != "")
+                {
+                    RaporAl rapor = new RaporAl();
+                    rapor.excelal(@klasorYolu);
+                }
+                else
+                {
+                    MessageBox.Show("Dizin Giriniz !");
+                }
+            }
+            catch (Exception hata)
+            {
+
+                MessageBox.Show("Hata :" + hata.Message);
+            }
+            finally
+            {
+                MessageBox.Show(klasorYolu + " içeri aktarıldı kontrol edin !");
+                this.Close();
+            }
+
         }
     }
 }

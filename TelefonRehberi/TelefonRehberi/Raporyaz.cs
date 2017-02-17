@@ -10,7 +10,7 @@ using excel = Microsoft.Office.Interop.Excel;
 namespace TelefonRehberi
 {
 
-    class Rapor
+    class Raporyaz
     {
         public void excelyaz(string dosyayolu)
         {
